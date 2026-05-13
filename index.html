@@ -13,7 +13,6 @@
   <body>
     <div class="scroll-track" aria-hidden="true"><div class="scroll-fill"></div></div>
     <div class="cursor-glow" aria-hidden="true"></div>
-
     <header class="site-header" id="site-header">
       <a class="brand" href="#top">
         <div class="brand-seal"><span class="seal-kanji">新</span><span class="seal-ring"></span></div>
@@ -29,7 +28,6 @@
       </nav>
       <button class="nav-toggle" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
     </header>
-
     <main id="top">
       <section class="hero" aria-label="ヒーロー">
         <div class="hero-bg">
@@ -45,10 +43,7 @@
         </div>
         <div class="hero-content">
           <div class="hero-badge"><span class="badge-line"></span><span>Niigata City Hospitality Guide — 2025</span><span class="badge-line"></span></div>
-          <h1>
-            <span class="h1-en">Welcome to</span>
-            <span class="h1-ja">新潟へようこそ</span>
-          </h1>
+          <h1><span class="h1-en">Welcome to</span><span class="h1-ja">新潟へようこそ</span></h1>
           <p class="hero-lead">昼は市役所から徒歩圏で60分。夜は新潟駅周辺で地酒と海鮮を。<br>日本海の幸、越後の米、300年続く酒造文化——<br>限られた時間でも、新潟らしさを存分に感じていただけるよう選びました。</p>
           <div class="hero-cta">
             <a href="#lunch" class="cta-btn cta-btn--primary">昼ごはんを探す</a>
@@ -72,7 +67,7 @@
           <article class="console-card"><div class="console-icon">🍜</div><strong>昼ごはん</strong><span>徒歩10分圏内</span><p>60分で戻れる近さと速さで厳選。</p></article>
           <article class="console-card"><div class="console-icon">🍶</div><strong>夜ごはん</strong><span>新潟駅周辺</span><p>18時以降、海鮮と地酒で新潟を堪能。</p></article>
           <article class="console-card"><div class="console-icon">🍷</div><strong>日本酒</strong><span>料理別ペアリング</span><p>何に合うか、で選べる日本酒ガイド。</p></article>
-          <article class="console-card"><div class="console-icon">🎁</div><strong>お土産</strong><span>駅で完結</span><p>CoCoLo新潟・ぽんしゅ館で帰り際に。</p></article>
+          <article class="console-card"><div class="console-icon">🎁</div><strong>お土産</strong><span>満足度ランキング</span><p>実体験口コミベースのTOP5。</p></article>
           <article class="console-card"><div class="console-icon">🏯</div><strong>散策スポット</strong><span>時間があれば</span><p>萬代橋・古町・美術館など厳選。</p></article>
         </div>
       </div>
@@ -136,7 +131,6 @@
         </div>
       </div>
 
-      <!-- LUNCH -->
       <section id="lunch" class="section" aria-labelledby="lunch-title">
         <div class="section-inner">
           <div class="section-heading">
@@ -144,7 +138,6 @@
             <h2 id="lunch-title">周辺ランチガイド</h2>
             <p class="section-desc">どちらの庁舎に来庁されましたか？ボタンで切り替えてください。いずれも60分以内で戻れる店を厳選しています。</p>
           </div>
-
           <div class="lunch-toggle" role="tablist" aria-label="庁舎の選択">
             <button class="toggle-btn active" data-target="honkan" role="tab" aria-selected="true">
               <span class="toggle-icon">🏛️</span>
@@ -157,8 +150,6 @@
               <span class="toggle-sub">古町・本町・東堀エリア</span>
             </button>
           </div>
-
-          <!-- 本館エリア -->
           <div class="spot-grid" id="lunch-honkan" role="tabpanel">
             <article class="spot-card spot-card--hero">
               <div class="card-ribbon">おすすめ No.1</div>
@@ -212,8 +203,6 @@
               <div class="pairing-box"><span class="pairing-label">☕ ペアリング</span><p>食後のコーヒー。午後の切り替えに最適。ゆったりした空間でリフレッシュできます。</p></div>
             </article>
           </div>
-
-          <!-- ルフルエリア -->
           <div class="spot-grid hidden" id="lunch-rufuru" role="tabpanel">
             <article class="spot-card spot-card--hero">
               <div class="card-ribbon">おすすめ No.1</div>
@@ -260,7 +249,6 @@
               <div class="pairing-box"><span class="pairing-label">💡 おすすめ</span><p>鮭・いくら・鮭皮焼きなど新潟らしい具材を選んで。出汁茶漬けセットもおすすめ。60席あるのでゆったり食べられます。</p></div>
             </article>
           </div>
-
           <div class="lunch-note">
             <div class="note-icon">⚠️</div>
             <div>営業時間・定休日は変更される場合があります。ご利用前に店舗ページか電話でご確認ください。12時台は混雑しやすいため、11:45前後の入店がおすすめです。</div>
@@ -268,7 +256,6 @@
         </div>
       </section>
 
-      <!-- DINNER -->
       <section id="dinner" class="section section--contrast" aria-labelledby="dinner-title">
         <div class="section-inner">
           <div class="section-heading">
@@ -298,7 +285,6 @@
         </div>
       </section>
 
-      <!-- SAKE -->
       <section id="sake" class="section" aria-labelledby="sake-title">
         <div class="section-inner">
           <div class="section-heading">
@@ -330,26 +316,94 @@
       <section id="souvenir" class="section section--contrast" aria-labelledby="souvenir-title">
         <div class="section-inner">
           <div class="section-heading">
-            <p class="eyebrow">Souvenirs · Niigata Station</p>
-            <h2 id="souvenir-title">新潟のお土産</h2>
-            <p class="section-desc">帰りの新幹線前に新潟駅で買いやすく、持ち帰りやすいものを優先。「軽い」「配れる」「新潟らしい」「特別感がある」の四軸で選びました。</p>
+            <p class="eyebrow">Souvenirs · Satisfaction Ranking</p>
+            <h2 id="souvenir-title">新潟お土産<br>満足度ランキング</h2>
+            <p class="section-desc">県外ユーザーの実体験投稿をもとにスコアリングした満足度ランキング（直近90日）。贈答・持ち帰り体験の口コミを重視して選んでいます。</p>
           </div>
           <div class="souvenir-where">
-            <div class="where-card where-card--primary"><div class="where-icon">🏪</div><h3>CoCoLo新潟</h3><p>新潟駅直結のショッピングモール。米菓・銘菓・海産物・地酒など新潟土産がほぼ揃います。帰りの乗車15分前でも十分間に合います。</p><span class="where-hours">6:00〜21:30（店舗により異なる）</span></div>
+            <div class="where-card where-card--primary"><div class="where-icon">🏪</div><h3>CoCoLo新潟</h3><p>新潟駅直結のショッピングモール。笹団子・鮭茶漬け・へぎそばなど主要土産がほぼ揃います。帰りの乗車15分前でも間に合います。</p><span class="where-hours">6:00〜21:30（店舗により異なる）</span></div>
             <div class="where-card"><div class="where-icon">🍶</div><h3>ぽんしゅ館 CoCoLo新潟店</h3><p>越後の銘酒を網羅したセレクトショップ。試飲で気に入った銘柄をそのまま購入できるのが最大の魅力。地酒のお土産はここで完結します。</p><span class="where-hours">9:30〜20:30</span></div>
             <div class="where-card"><div class="where-icon">🎋</div><h3>越後獅子のさかたや</h3><p>笹団子・ちまきなど新潟の伝統菓子の専門店。包装も丁寧で、目上の方へのお土産に最適。消費期限の確認をお忘れなく。</p><span class="where-hours">CoCoLo新潟内</span></div>
           </div>
-          <div class="souvenir-grid">
-            <article class="souvenir-card souvenir-card--featured"><div class="souvenir-rank">定番中の定番</div><div class="souvenir-emoji">🎋</div><h3>笹団子</h3><div class="souvenir-price">目安：8〜10個入り 1,000〜1,500円</div><p>笹の香りとよもぎの風味で、新潟らしさが一言で伝わる銘菓。ご家族へのお土産にも職場への手土産にも使いやすいです。冷凍・常温の両タイプあり。</p><div class="souvenir-tags"><span>家族向け</span><span>新潟らしさ</span><span>持ち帰りやすい</span></div></article>
-            <article class="souvenir-card"><div class="souvenir-emoji">🍘</div><h3>米菓・柿の種</h3><div class="souvenir-price">目安：500〜1,500円</div><p>亀田製菓・岩塚製菓など新潟発の米菓メーカー。軽くて分けやすく、職場配りに最適。甘いものが苦手な方にも渡しやすい安定枠です。</p><div class="souvenir-tags"><span>職場配り</span><span>軽い</span></div></article>
-            <article class="souvenir-card"><div class="souvenir-emoji">🐟</div><h3>鮭茶漬け・ご飯のおとも</h3><div class="souvenir-price">目安：800〜2,000円</div><p>新潟の米文化を感じるお土産。村上市産の塩引き鮭を使ったご飯のおともは、目上の方やご家族向けにも使いやすく、高級感があります。</p><div class="souvenir-tags"><span>きちんと感</span><span>目上の方へ</span></div></article>
-            <article class="souvenir-card"><div class="souvenir-emoji">🍶</div><h3>地酒ミニボトル</h3><div class="souvenir-price">目安：500〜3,000円</div><p>ぽんしゅ館で選びやすいお土産。試飲して気に入った銘柄をそのまま持ち帰るのが最もスマートです。お酒を飲む方への贈り物として喜ばれます。</p><div class="souvenir-tags"><span>日本酒好きへ</span><span>こだわり感</span></div></article>
-            <article class="souvenir-card"><div class="souvenir-emoji">🍐</div><h3>ル レクチエ菓子</h3><div class="souvenir-price">目安：1,500〜3,000円</div><p>新潟特産の洋梨「ル レクチエ」を使ったスイーツ。季節限定品もあり、特別感と新潟らしさを両立できる上品な選択です。見栄えも抜群。</p><div class="souvenir-tags"><span>甘味</span><span>特別感</span><span>季節限定あり</span></div></article>
+          <div class="souvenir-grid souvenir-grid--ranking">
+            <article class="souvenir-card souvenir-card--featured">
+              <div class="souvenir-rank-num">1</div>
+              <div class="souvenir-score"><span class="score-val">92</span><span class="score-unit">/100</span></div>
+              <div class="souvenir-emoji">🎋</div>
+              <h3>笹団子</h3>
+              <div class="souvenir-shop">田中屋本店など伝統店</div>
+              <div class="souvenir-price">目安：8〜10個入り 1,000〜1,500円</div>
+              <p>笹の香り・もちもち食感・あんこのバランスが好評。「新潟土産で買って正解」「家族に好評」の声が多く、贈答で最も反応が良いお土産です。冷凍・常温の両タイプあり。</p>
+              <div class="souvenir-voice">「笹の香り楽しみながら家族で食べた」「また買いたい」</div>
+              <div class="souvenir-tags"><span>家族向け</span><span>新潟らしさ強い</span><span>贈答で反応◎</span></div>
+            </article>
+            <article class="souvenir-card">
+              <div class="souvenir-rank-num">2</div>
+              <div class="souvenir-score"><span class="score-val">88</span><span class="score-unit">/100</span></div>
+              <div class="souvenir-emoji">🐟</div>
+              <h3>加島屋の鮭茶漬け</h3>
+              <div class="souvenir-shop">加島屋本店・CoCoLo新潟</div>
+              <div class="souvenir-price">目安：1,000〜3,000円</div>
+              <p>「ご飯に合う」「最高」の実食投稿が多く、再購入意向が非常に高いお土産。食通・ご飯好きの方に特に喜ばれます。日常使い＋特別感を両立した新潟らしい海産物加工品。</p>
+              <div class="souvenir-voice">「加島屋の鮭茶漬け！最高にご飯に合います」</div>
+              <div class="souvenir-tags"><span>食通向け</span><span>リピ意向高い</span><span>目上の方へ</span></div>
+            </article>
+            <article class="souvenir-card">
+              <div class="souvenir-rank-num">3</div>
+              <div class="souvenir-score"><span class="score-val">85</span><span class="score-unit">/100</span></div>
+              <div class="souvenir-emoji">🍜</div>
+              <h3>へぎそば（乾麺）</h3>
+              <div class="souvenir-shop">CoCoLo新潟・越後製麺各社</div>
+              <div class="souvenir-price">目安：1,000〜2,000円</div>
+              <p>「無茶苦茶旨い」「新潟らしい」と県外ユーザーから高評価。布のりで締めた独特の食感は新潟ならでは。乾麺タイプは持ち帰りやすく、食体験重視の方へのお土産に最適です。</p>
+              <div class="souvenir-voice">「へぎそばも無茶苦茶旨くて食事は最高だった！」</div>
+              <div class="souvenir-tags"><span>食体験重視</span><span>新潟ならでは</span></div>
+            </article>
+            <article class="souvenir-card">
+              <div class="souvenir-rank-num">4</div>
+              <div class="souvenir-score"><span class="score-val">83</span><span class="score-unit">/100</span></div>
+              <div class="souvenir-emoji">🥐</div>
+              <h3>新潟絹芋ガレットサンド</h3>
+              <div class="souvenir-shop">ルーテシア（新潟駅周辺）</div>
+              <div class="souvenir-price">目安：1,500〜2,500円</div>
+              <p>新潟産素材を使ったサクしっとり食感の焼き菓子。常温で持ち運びやすく、センス良いパッケージがおしゃれな贈り物に向いています。新潟駅周辺で購入しやすいのも魅力。</p>
+              <div class="souvenir-voice">「ルーテシア！新潟来られた方はお土産に是非〜！！」</div>
+              <div class="souvenir-tags"><span>おしゃれ贈答</span><span>スイーツ好き向け</span></div>
+            </article>
+            <article class="souvenir-card">
+              <div class="souvenir-rank-num">5</div>
+              <div class="souvenir-score"><span class="score-val">80</span><span class="score-unit">/100</span></div>
+              <div class="souvenir-emoji">☕</div>
+              <h3>雪室珈琲・豆菓子セット</h3>
+              <div class="souvenir-shop">CoCoLo新潟・各専門店</div>
+              <div class="souvenir-price">目安：1,000〜2,000円</div>
+              <p>雪室で熟成させた珈琲と新潟の豆菓子のセット。「珍しさと実用性で喜ばれやすい」お土産として贈答評価が高く、家族・親御さんへの贈り物としておすすめです。</p>
+              <div class="souvenir-voice">「母への贈り物（新潟名産の雪室珈琲と豆菓子）を渡し…」</div>
+              <div class="souvenir-tags"><span>家族・親向け</span><span>珍しさあり</span></div>
+            </article>
+          </div>
+          <div class="souvenir-trend">
+            <div class="trend-header">
+              <span class="trend-badge">📈 急上昇中</span>
+              <h3>今伸びているお土産</h3>
+            </div>
+            <div class="trend-items">
+              <div class="trend-item"><span class="trend-emoji">🍤</span><div><strong>竹徳の天ぷら</strong><p>日本酒との相性実食投稿が急増。「ごはんより酒に合う」と話題。日本酒好きへの贈り物に注目です。</p></div></div>
+              <div class="trend-item"><span class="trend-emoji">🐟</span><div><strong>加島屋の塩辛・茶漬け類</strong><p>実食満足度が急上昇中。鮭茶漬けとともに「リピ買い」「駅で追加購入」の投稿が増加中。</p></div></div>
+              <div class="trend-item"><span class="trend-emoji">🍡</span><div><strong>地元菓子店のどら焼き・わらび餅</strong><p>阿賀野市などニッチな店舗の開封投稿が増加。「地元感」「手作り感」が響いています。</p></div></div>
+            </div>
+          </div>
+          <div class="souvenir-alert">
+            <span>⚠️</span>
+            <div><strong>注意：亀田製菓の柿の種・サラダホープ</strong>は、「外国産米使用」を懸念する投稿が増加しており購入控え傾向が見られます。職場配りには岩塚製菓など他の米菓メーカーも候補に。</div>
+          </div>
+          <div class="souvenir-sake-note">
+            <div class="sake-note-icon">🍶</div>
+            <div><strong>日本酒好きへは：地酒ミニボトル（ぽんしゅ館）</strong><br>試飲して気に入った銘柄をそのまま持ち帰るのが最もスマートな選び方。贈る相手がお酒を飲む方の場合に絞ると上品な贈り物になります。目安500〜3,000円。</div>
           </div>
         </div>
       </section>
 
-      <!-- SPOTS -->
       <section id="spots" class="section" aria-labelledby="spots-title">
         <div class="section-inner">
           <div class="section-heading">
@@ -368,7 +422,6 @@
         </div>
       </section>
 
-      <!-- ACCESS -->
       <section class="section section--contrast section--access" aria-label="アクセス情報">
         <div class="section-inner">
           <div class="section-heading"><p class="eyebrow">Access Information</p><h2>市役所へのアクセス</h2></div>
@@ -385,7 +438,6 @@
         </div>
       </section>
 
-      <!-- SOURCES -->
       <section class="section section--sources" aria-labelledby="sources-title">
         <div class="section-inner">
           <div class="section-heading"><p class="eyebrow">Source Check</p><h2 id="sources-title">確認した情報源</h2><p class="section-desc">営業時間・定休日・料金は変更される場合があります。ご利用前に店舗ページか電話でご確認ください。</p></div>
@@ -426,13 +478,10 @@
     let mx = -200, my = -200;
     document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
     (function loop() { glow.style.transform = `translate(${mx - 200}px, ${my - 200}px)`; requestAnimationFrame(loop); })();
-
     const fill = document.querySelector('.scroll-fill');
     window.addEventListener('scroll', () => { const max = document.documentElement.scrollHeight - window.innerHeight; fill.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%'; }, { passive: true });
-
     const header = document.getElementById('site-header');
     window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
-
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('nav');
     toggle.addEventListener('click', () => {
@@ -440,8 +489,6 @@
       toggle.setAttribute('aria-expanded', String(!open));
       nav.classList.toggle('nav--open', !open);
     });
-
-    /* Lunch toggle */
     const toggleBtns = document.querySelectorAll('.toggle-btn');
     const honkan = document.getElementById('lunch-honkan');
     const rufuru = document.getElementById('lunch-rufuru');
@@ -457,14 +504,10 @@
         }
       });
     });
-
-    /* Reveal on scroll */
-    const revealEls = document.querySelectorAll('.console-card, .pillar, .rail-item, .spot-card, .dinner-card, .sake-card, .souvenir-card, .spot-mini, .access-card, .section-heading, .dinner-feature, .sake-intro, .culture-strip, .souvenir-where, .lunch-note, .dinner-tip, .sake-note, .lunch-toggle, .access-building');
+    const revealEls = document.querySelectorAll('.console-card, .pillar, .rail-item, .spot-card, .dinner-card, .sake-card, .souvenir-card, .spot-mini, .access-card, .section-heading, .dinner-feature, .sake-intro, .culture-strip, .souvenir-where, .lunch-note, .dinner-tip, .sake-note, .lunch-toggle, .access-building, .souvenir-trend, .souvenir-alert, .souvenir-sake-note');
     revealEls.forEach((el, i) => { el.classList.add('reveal'); el.style.setProperty('--d', `${(i % 8) * 60}ms`); });
     const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.1 });
     revealEls.forEach(el => io.observe(el));
-
-    /* Stat counter */
     const statNums = document.querySelectorAll('.stat-num[data-count]');
     const statObs = new IntersectionObserver(entries => {
       entries.forEach(e => {

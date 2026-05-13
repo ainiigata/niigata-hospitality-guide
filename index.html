@@ -13,6 +13,7 @@
   <body>
     <div class="scroll-track" aria-hidden="true"><div class="scroll-fill"></div></div>
     <div class="cursor-glow" aria-hidden="true"></div>
+
     <header class="site-header" id="site-header">
       <a class="brand" href="#top">
         <div class="brand-seal"><span class="seal-kanji">新</span><span class="seal-ring"></span></div>
@@ -28,7 +29,10 @@
       </nav>
       <button class="nav-toggle" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
     </header>
+
     <main id="top">
+
+      <!-- ============ HERO ============ -->
       <section class="hero" aria-label="ヒーロー">
         <div class="hero-bg">
           <img src="assets/niigata-city-hero.png" alt="萬代橋と信濃川" class="hero-img" />
@@ -43,8 +47,15 @@
         </div>
         <div class="hero-content">
           <div class="hero-badge"><span class="badge-line"></span><span>Niigata City Hospitality Guide — 2025</span><span class="badge-line"></span></div>
-          <h1><span class="h1-en">Welcome to</span><span class="h1-ja">新潟へようこそ</span></h1>
-          <p class="hero-lead">昼は市役所から徒歩圏で60分。夜は新潟駅周辺で地酒と海鮮を。<br>日本海の幸、越後の米、300年続く酒造文化——<br>限られた時間でも、新潟らしさを存分に感じていただけるよう選びました。</p>
+          <h1>
+            <span class="h1-en">Welcome to</span>
+            <span class="h1-ja">新潟へようこそ</span>
+          </h1>
+          <p class="hero-lead">
+            昼は市役所から徒歩圏で60分。夜は新潟駅周辺で地酒と海鮮を。<br>
+            日本海の幸、越後の米、300年続く酒造文化——<br>
+            限られた時間でも、新潟らしさを存分に感じていただけるよう選びました。
+          </p>
           <div class="hero-cta">
             <a href="#lunch" class="cta-btn cta-btn--primary">昼ごはんを探す</a>
             <a href="#dinner" class="cta-btn cta-btn--ghost">夜の案内を見る</a>
@@ -62,16 +73,18 @@
         <a href="#culture" class="hero-scroll" aria-label="スクロール"><span class="scroll-line"></span><span class="scroll-text">Scroll</span></a>
       </section>
 
+      <!-- ============ CONSOLE ============ -->
       <div class="console-wrap">
         <div class="guide-console">
           <article class="console-card"><div class="console-icon">🍜</div><strong>昼ごはん</strong><span>徒歩10分圏内</span><p>60分で戻れる近さと速さで厳選。</p></article>
           <article class="console-card"><div class="console-icon">🍶</div><strong>夜ごはん</strong><span>新潟駅周辺</span><p>18時以降、海鮮と地酒で新潟を堪能。</p></article>
           <article class="console-card"><div class="console-icon">🍷</div><strong>日本酒</strong><span>料理別ペアリング</span><p>何に合うか、で選べる日本酒ガイド。</p></article>
-          <article class="console-card"><div class="console-icon">🎁</div><strong>お土産</strong><span>満足度ランキング</span><p>実体験口コミベースのTOP5。</p></article>
+          <article class="console-card"><div class="console-icon">🎁</div><strong>お土産</strong><span>駅で完結</span><p>CoCoLo新潟・ぽんしゅ館で帰り際に。</p></article>
           <article class="console-card"><div class="console-icon">🏯</div><strong>散策スポット</strong><span>時間があれば</span><p>萬代橋・古町・美術館など厳選。</p></article>
         </div>
       </div>
 
+      <!-- ============ CULTURE ============ -->
       <section id="culture" class="section section--culture" aria-labelledby="culture-title">
         <div class="section-inner">
           <div class="culture-layout">
@@ -115,6 +128,7 @@
         </div>
       </section>
 
+      <!-- ============ CONCIERGE BOARD ============ -->
       <div class="concierge-wrap">
         <div class="concierge-panel">
           <div class="concierge-label">Hospitality Guide</div>
@@ -131,6 +145,7 @@
         </div>
       </div>
 
+      <!-- ============ LUNCH ============ -->
       <section id="lunch" class="section" aria-labelledby="lunch-title">
         <div class="section-inner">
           <div class="section-heading">
@@ -138,6 +153,8 @@
             <h2 id="lunch-title">周辺ランチガイド</h2>
             <p class="section-desc">どちらの庁舎に来庁されましたか？ボタンで切り替えてください。いずれも60分以内で戻れる店を厳選しています。</p>
           </div>
+
+          <!-- TOGGLE -->
           <div class="lunch-toggle" role="tablist" aria-label="庁舎の選択">
             <button class="toggle-btn active" data-target="honkan" role="tab" aria-selected="true">
               <span class="toggle-icon">🏛️</span>
@@ -150,7 +167,10 @@
               <span class="toggle-sub">古町・本町・東堀エリア</span>
             </button>
           </div>
+
+          <!-- ===== 本館エリア ===== -->
           <div class="spot-grid" id="lunch-honkan" role="tabpanel">
+
             <article class="spot-card spot-card--hero">
               <div class="card-ribbon">おすすめ No.1</div>
               <div class="card-header"><div class="card-badges"><span class="badge badge--green">体にやさしい和食</span><span class="badge badge--dist">徒歩10分目安</span></div><div class="card-category">日本食</div></div>
@@ -160,6 +180,7 @@
               <div class="pairing-box"><span class="pairing-label">🍶 日本酒ペアリング</span><p>鶴の友（樋木酒造）。野菜料理や米の甘みにやわらかく寄り添う旨口。新潟市内の蔵元の地酒です。</p></div>
               <div class="card-tip"><span>💡 Tips</span> 12時前後は行列になることがある。11:45前後の入店がおすすめです。</div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--red">新潟らしい一杯</span><span class="badge badge--dist">市役所向かい</span></div><div class="card-category">ラーメン</div></div>
               <h3>中華そば こころ 市役所前店</h3>
@@ -167,6 +188,7 @@
               <dl class="mini-facts"><div><dt>昼営業</dt><dd>11:00〜</dd></div><div><dt>場所</dt><dd>学校裏町</dd></div><div><dt>注意</dt><dd>月水は昼短縮あり</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">🍶 日本酒ペアリング</span><p>〆張鶴。背脂の余韻をキリッと辛口で切る。夜に日本酒を楽しむ際の会話の糸口にも。</p></div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--amber">老舗そば</span><span class="badge badge--dist">徒歩圏</span></div><div class="card-category">そば</div></div>
               <h3>そば処 新更科</h3>
@@ -174,6 +196,7 @@
               <dl class="mini-facts"><div><dt>昼営業</dt><dd>11:00〜14:00</dd></div><div><dt>料理</dt><dd>そば・丼</dd></div><div><dt>向き</dt><dd>軽め・短時間</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">🍶 日本酒ペアリング</span><p>久保田 千寿。すっきり淡麗で、そばの香りを邪魔しにくい定番の選択。</p></div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--orange">職人系</span><span class="badge badge--dist">徒歩圏</span></div><div class="card-category">とんかつ</div></div>
               <h3>とんかつ とんき</h3>
@@ -181,6 +204,7 @@
               <dl class="mini-facts"><div><dt>昼営業</dt><dd>11:30〜14:00</dd></div><div><dt>定休日</dt><dd>火曜</dd></div><div><dt>注意</dt><dd>混雑時は代替へ</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">🍶 日本酒ペアリング</span><p>八海山。脂をすっきり流す淡麗辛口。夜に日本酒デビューするなら昼から予習も◎。</p></div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--pink">越後の味噌</span><span class="badge badge--dist">上古町</span></div><div class="card-category">豚汁定食</div></div>
               <h3>古町ぺんぎん商店</h3>
@@ -188,6 +212,7 @@
               <dl class="mini-facts"><div><dt>昼営業</dt><dd>11:00〜</dd></div><div><dt>注意</dt><dd>売切・定休確認</dd></div><div><dt>向き</dt><dd>やさしい定食</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">🍶 日本酒ペアリング</span><p>越後鶴亀。味噌の甘みにやわらかく合い、日本酒が初めての方にもすすめやすい一本。</p></div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--yellow">町中華</span><span class="badge badge--dist">学校町</span></div><div class="card-category">中華料理</div></div>
               <h3>広来飯店 学校町店</h3>
@@ -195,6 +220,7 @@
               <dl class="mini-facts"><div><dt>昼営業</dt><dd>11:00〜</dd></div><div><dt>料理</dt><dd>中華・麺類</dd></div><div><dt>向き</dt><dd>早くしっかり</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">🍶 日本酒ペアリング</span><p>麒麟山や八海山。濃い味の中華に淡麗辛口を合わせると口がすっきりします。</p></div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--blue">喫茶・軽食</span><span class="badge badge--dist">医学町通</span></div><div class="card-category">カフェ</div></div>
               <h3>カフェ・ド・プライム</h3>
@@ -202,17 +228,22 @@
               <dl class="mini-facts"><div><dt>営業</dt><dd>平日朝から</dd></div><div><dt>料理</dt><dd>喫茶・軽食</dd></div><div><dt>向き</dt><dd>軽め・会話しやすい</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">☕ ペアリング</span><p>食後のコーヒー。午後の切り替えに最適。ゆったりした空間でリフレッシュできます。</p></div>
             </article>
-          </div>
+
+          </div><!-- /lunch-honkan -->
+
+          <!-- ===== ルフルエリア ===== -->
           <div class="spot-grid hidden" id="lunch-rufuru" role="tabpanel">
+
             <article class="spot-card spot-card--hero">
               <div class="card-ribbon">おすすめ No.1</div>
               <div class="card-header"><div class="card-badges"><span class="badge badge--green">佐渡の自然食</span><span class="badge badge--dist">徒歩3分</span></div><div class="card-category">自然食・和食</div></div>
               <h3>佐渡自然食レストラン 貴支</h3>
               <p class="card-desc">佐渡産の新鮮食材を使った自然食レストラン。人気No.1の「貴支御膳」は刺身・天ぷら・焼魚・小鉢・ご飯・味噌汁のフルセット。午後に重く残りにくく、佐渡グルメを一度に楽しめます。</p>
-              <dl class="mini-facts"><div><dt>昼営業</dt><dd>11:00〜13:30</dd></div><div><dt>定休日</dt><dd>日祝・第3水曜</dd></div><div><dt>場所</dt><dd>本町通8番町アビタシオンビル</dd></div></dl>
+              <dl class="mini-facts"><div><dt>昼営業</dt><dd>11:00〜13:30</dd></div><dt>定休日</dt><dd>日祝・第3水曜</dd><div><dt>場所</dt><dd>本町通8番町アビタシオンビル</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">🍶 日本酒ペアリング</span><p>八海山。佐渡の海鮮と新潟の淡麗辛口の組み合わせは間違いなし。刺身の一皿から始めてみてください。</p></div>
               <div class="card-tip"><span>💡 Tips</span> 自然食・無添加にこだわった体にやさしいメニュー構成。移転したばかりで店内もきれいです。</div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--red">新潟郷土料理</span><span class="badge badge--dist">古町エリア</span></div><div class="card-category">居酒屋ランチ</div></div>
               <h3>新潟ノ大衆酒場 酒・和縁</h3>
@@ -220,6 +251,7 @@
               <dl class="mini-facts"><div><dt>昼営業</dt><dd>11:30〜13:00</dd></div><div><dt>定休日</dt><dd>土日祝はランチ休み</dd></div><div><dt>注意</dt><dd>火〜金のみ</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">🍶 日本酒ペアリング</span><p>鶴の友。新潟市内の蔵元の地酒で郷土料理と合わせると、新潟の食文化を丸ごと体感できます。</p></div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--amber">担々麺専門</span><span class="badge badge--dist">本町通</span></div><div class="card-category">担々麺</div></div>
               <h3>笑美寿亭 本店</h3>
@@ -227,6 +259,7 @@
               <dl class="mini-facts"><div><dt>昼営業</dt><dd>11:00〜14:30</dd></div><div><dt>定休日</dt><dd>日曜</dd></div><div><dt>場所</dt><dd>本町通6番町</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">💡 おすすめ</span><p>担々麺の種類が豊富なので、辛さやスープの好みで選べます。初めての方はスタンダードな「担々麺」から。</p></div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--orange">格安町中華</span><span class="badge badge--dist">青海センター内</span></div><div class="card-category">中華料理</div></div>
               <h3>鵬龍（ほうりゅう）</h3>
@@ -234,21 +267,25 @@
               <dl class="mini-facts"><div><dt>昼営業</dt><dd>11:00〜17:00</dd></div><div><dt>定休日</dt><dd>不定休</dd></div><div><dt>注意</dt><dd>木曜は〜14:00</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">🍶 日本酒ペアリング</span><p>麒麟山。濃い目の中華に淡麗辛口を合わせると口がすっきり。夜の一杯へのウォーミングアップにも。</p></div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--pink">市場の海鮮</span><span class="badge badge--dist">青海ショッピングセンター</span></div><div class="card-category">海鮮</div></div>
               <h3>青海ショッピングセンター内 鮮魚店</h3>
-              <p class="card-desc">「新潟の台所」と呼ばれる青海ショッピングセンター内の鮮魚店群。地物鮮魚を市場価格で。その日の魚を使った海鮮丼や数量限定ランチ（800円〜）を楽しめます。古川鮮魚・鈴木鮮魚など。</p>
+              <p class="card-desc">「新潟の台所」と呼ばれる青海ショッピングセンター内の鮮魚店群。古川鮮魚・鈴木鮮魚など地物鮮魚を市場価格で。その日の魚を使った海鮮丼や数量限定ランチ（800円〜）を楽しめます。</p>
               <dl class="mini-facts"><div><dt>昼営業</dt><dd>9:00〜（店舗により異なる）</dd></div><div><dt>注意</dt><dd>数量限定あり</dd></div><div><dt>向き</dt><dd>新鮮な海鮮を安く</dd></div></dl>
               <div class="pairing-box"><span class="pairing-label">🍶 日本酒ペアリング</span><p>〆張鶴。キリッとした辛口が新鮮な魚の旨味を引き立てます。日替わりの地魚との組み合わせを楽しんで。</p></div>
             </article>
+
             <article class="spot-card">
               <div class="card-header"><div class="card-badges"><span class="badge badge--blue">新潟の米文化</span><span class="badge badge--dist">東堀前通8番町</span></div><div class="card-category">おにぎり</div></div>
               <h3>おにぎり処 八番（加島屋本店2F）</h3>
               <p class="card-desc">新潟の老舗食品メーカー「加島屋」の本店2階に誕生したおにぎり専門店。新潟産米で握るふっくらおにぎりが30種以上。鮭・いくら・鮭皮など新潟らしい具材を味わえます。</p>
               <dl class="mini-facts"><div><dt>営業</dt><dd>10:00〜16:30（LO 15:30）</dd></div><div><dt>定休日</dt><dd>日曜</dd></div><div><dt>向き</dt><dd>軽め・米の味を楽しむ</dd></div></dl>
-              <div class="pairing-box"><span class="pairing-label">💡 おすすめ</span><p>鮭・いくら・鮭皮焼きなど新潟らしい具材を選んで。出汁茶漬けセットもおすすめ。60席あるのでゆったり食べられます。</p></div>
+              <div class="pairing-box"><span class="pairing-label">💡 おすすめ</span><p>鮭・いくら・鮭皮焼きなど新潟らしい具材を選んで。出汁茶漬けセットもおすすめです。60席あるのでゆったり食べられます。</p></div>
             </article>
-          </div>
+
+          </div><!-- /lunch-rufuru -->
+
           <div class="lunch-note">
             <div class="note-icon">⚠️</div>
             <div>営業時間・定休日は変更される場合があります。ご利用前に店舗ページか電話でご確認ください。12時台は混雑しやすいため、11:45前後の入店がおすすめです。</div>
@@ -256,6 +293,7 @@
         </div>
       </section>
 
+      <!-- ============ DINNER ============ -->
       <section id="dinner" class="section section--contrast" aria-labelledby="dinner-title">
         <div class="section-inner">
           <div class="section-heading">
@@ -263,6 +301,7 @@
             <h2 id="dinner-title">夜ご飯・飲み屋さん</h2>
             <p class="section-desc">18時以降、新潟駅周辺で新潟らしく食べるための候補です。海鮮と地酒でぜひ新潟の夜を楽しんでください。人気店は予約がおすすめです。</p>
           </div>
+
           <div class="dinner-feature">
             <div class="feature-badge">まずここから</div>
             <div class="feature-body">
@@ -275,16 +314,46 @@
               </div>
             </div>
           </div>
+
           <div class="dinner-grid">
-            <article class="dinner-card dinner-card--accent"><div class="dinner-card-tag">予約推奨 · 本命</div><h3>いかの墨 新潟駅前店</h3><p>佐渡沖・新潟沖の新鮮な魚介と越後の地酒を楽しめる居酒屋。個室での会食にも使いやすく、「新潟らしい夜」を過ごすなら外せない一軒。のどぐろや甘えびの刺し盛りは必食。</p><div class="dinner-meta"><span>🕐 17:00〜24:00</span><span>📍 新潟駅前</span><span>🎯 予約推奨</span></div><div class="dinner-recommend">おすすめ：のどぐろ塩焼き・甘えびの刺し盛り・八海山純米</div></article>
-            <article class="dinner-card"><div class="dinner-card-tag">日本酒好きに · 個室あり</div><h3>八海山公認 越後酒房 八海山 新潟駅前店</h3><p>八海山ブランドの公認居酒屋。純米・吟醸・大吟醸など豊富なラインナップを個室でゆっくり楽しめます。日本酒に詳しい方や、落ち着いた席でゆっくりしたいときに。</p><div class="dinner-meta"><span>🕐 16:00〜24:00</span><span>📍 新潟駅前</span><span>🎯 個室あり</span></div><div class="dinner-recommend">おすすめ：八海山の飲み比べセット・季節の肴</div></article>
-            <article class="dinner-card"><div class="dinner-card-tag">地元感重視</div><h3>旬魚酒菜 五郎 万代店</h3><p>万代エリアの正統派居酒屋。観光感より地元感で魚と地酒を楽しみたい夜に。新潟の漁師が持ち込む旬の魚を日替わりメニューで提供。常連客が多く活気があります。</p><div class="dinner-meta"><span>🕐 17:00〜24:30</span><span>📍 万代エリア</span><span>🎯 地酒と魚</span></div><div class="dinner-recommend">おすすめ：本日の刺し盛り・焼き魚・越後の地酒</div></article>
-            <article class="dinner-card"><div class="dinner-card-tag">地産地消 · 駅南</div><h3>和食酒場 風花</h3><p>駅南けやき通り沿い。地産地消の和食で、ホテルが駅南側の場合も使いやすい落ち着いた一軒。新潟県産食材を丁寧に使った料理が揃います。</p><div class="dinner-meta"><span>🕐 17:30〜23:00</span><span>📍 駅南けやき通り</span><span>🎯 日曜休み</span></div><div class="dinner-recommend">おすすめ：季節の地魚・新潟産野菜のお通し</div></article>
+            <article class="dinner-card dinner-card--accent">
+              <div class="dinner-card-tag">予約推奨 · 本命</div>
+              <h3>いかの墨 新潟駅前店</h3>
+              <p>佐渡沖・新潟沖の新鮮な魚介と越後の地酒を楽しめる居酒屋。個室での会食にも使いやすく、「新潟らしい夜」を過ごすなら外せない一軒です。のどぐろや甘えびの刺し盛りは必食。</p>
+              <div class="dinner-meta"><span>🕐 17:00〜24:00</span><span>📍 新潟駅前</span><span>🎯 予約推奨</span></div>
+              <div class="dinner-recommend">おすすめ：のどぐろ塩焼き・甘えびの刺し盛り・八海山純米</div>
+            </article>
+            <article class="dinner-card">
+              <div class="dinner-card-tag">日本酒好きに · 個室あり</div>
+              <h3>八海山公認 越後酒房 八海山 新潟駅前店</h3>
+              <p>八海山ブランドの公認居酒屋。純米・吟醸・大吟醸など豊富なラインナップを個室でゆっくり楽しめます。日本酒に詳しい方や、落ち着いた席でゆっくりしたいときに。</p>
+              <div class="dinner-meta"><span>🕐 16:00〜24:00</span><span>📍 新潟駅前</span><span>🎯 個室あり</span></div>
+              <div class="dinner-recommend">おすすめ：八海山の飲み比べセット・季節の肴</div>
+            </article>
+            <article class="dinner-card">
+              <div class="dinner-card-tag">地元感重視</div>
+              <h3>旬魚酒菜 五郎 万代店</h3>
+              <p>万代エリアの正統派居酒屋。観光感より地元感で魚と地酒を楽しみたい夜に。新潟の漁師が持ち込む旬の魚を日替わりメニューで提供。常連客が多く活気があります。</p>
+              <div class="dinner-meta"><span>🕐 17:00〜24:30</span><span>📍 万代エリア</span><span>🎯 地酒と魚</span></div>
+              <div class="dinner-recommend">おすすめ：本日の刺し盛り・焼き魚・越後の地酒</div>
+            </article>
+            <article class="dinner-card">
+              <div class="dinner-card-tag">地産地消 · 駅南</div>
+              <h3>和食酒場 風花</h3>
+              <p>駅南けやき通り沿い。地産地消の和食で、ホテルが駅南側の場合も案内しやすい落ち着いた一軒。新潟県産食材を丁寧に使った料理が揃います。</p>
+              <div class="dinner-meta"><span>🕐 17:30〜23:00</span><span>📍 駅南けやき通り</span><span>🎯 日曜休み</span></div>
+              <div class="dinner-recommend">おすすめ：季節の地魚・新潟産野菜のお通し</div>
+            </article>
           </div>
-          <div class="dinner-tip"><div class="tip-header"><span>🗓️</span><strong>予約のすすめ</strong></div><p>「いかの墨」「越後酒房 八海山」は週末・祝前日は特に混雑します。来庁日が決まったら早めにご予約を。「五郎 万代」は当日でも入れることが多いですが、個室希望の場合は前日までに確認を。</p></div>
+
+          <div class="dinner-tip">
+            <div class="tip-header"><span>🗓️</span><strong>予約のすすめ</strong></div>
+            <p>「いかの墨」「越後酒房 八海山」は週末・祝前日は特に混雑します。来庁日が決まったら早めにご予約を。「五郎 万代」は当日でも入れることが多いですが、個室希望の場合は前日までに確認を。</p>
+          </div>
         </div>
       </section>
 
+      <!-- ============ SAKE ============ -->
       <section id="sake" class="section" aria-labelledby="sake-title">
         <div class="section-inner">
           <div class="section-heading">
@@ -292,27 +361,72 @@
             <h2 id="sake-title">越後の地酒、選び方</h2>
             <p class="section-desc">新潟は全国最多クラスの酒蔵を持つ日本酒王国。銘柄名だけでなく、料理や好みに合わせて選べるよう「何に合うか」で整理しました。</p>
           </div>
+
           <div class="sake-intro">
-            <div class="sake-intro-text"><h3>新潟の酒の特徴：<em>淡麗辛口</em></h3><p>新潟の日本酒は一般的に「淡麗辛口」と表現されます。雑味が少なく透明感のある味わいが特徴で、繊細な魚料理や野菜料理の風味を邪魔しないため、新潟の食文化と見事に調和します。「すっきりして飲みやすい」「食事の邪魔をしない」と感じるのがその証拠です。</p></div>
+            <div class="sake-intro-text">
+              <h3>新潟の酒の特徴：<em>淡麗辛口</em></h3>
+              <p>新潟の日本酒は一般的に「淡麗辛口」と表現されます。雑味が少なく透明感のある味わいが特徴で、繊細な魚料理や野菜料理の風味を邪魔しないため、新潟の食文化と見事に調和します。「すっきりして飲みやすい」「食事の邪魔をしない」と感じるのがその証拠です。</p>
+            </div>
             <div class="sake-types">
               <div class="sake-type"><span>純米酒</span><p>米・米麹・水のみ。コクと旨味がある。食中酒に最適。</p></div>
               <div class="sake-type"><span>吟醸酒</span><p>フルーティな香り。冷やして飲むのがおすすめ。</p></div>
               <div class="sake-type"><span>大吟醸</span><p>最高峰の磨き。贈答・特別な席向け。</p></div>
             </div>
           </div>
+
           <div class="sake-matrix">
-            <article class="sake-card"><div class="sake-tag">海鮮に</div><h3>八海山</h3><div class="sake-origin">南魚沼市 / 八海醸造</div><p>淡麗辛口の代表格。刺身、のどぐろ、甘えびなど海鮮居酒屋の一杯目に最適。全国的な知名度も高く、話のきっかけにもなる定番銘柄。</p><div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:85%"></div></div></div><div class="sake-recommend">純米吟醸がバランス◎</div></article>
-            <article class="sake-card"><div class="sake-tag">上品に</div><h3>鶴齢</h3><div class="sake-origin">南魚沼市 / 青木酒造</div><p>華やかな香りと深みある旨味のバランスが絶妙。和食や季節料理と合わせると特に印象がよく、食通の方に好まれることが多い一本。</p><div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:65%"></div></div></div><div class="sake-recommend">特別純米酒が人気</div></article>
-            <article class="sake-card"><div class="sake-tag">やさしく</div><h3>越後鶴亀</h3><div class="sake-origin">新潟市西区 / 越後鶴亀</div><p>やわらかな甘みと穏やかな香りが特徴。日本酒が初めての方にもすすめやすく、味噌料理や野菜料理にも自然に合います。飲みやすさが魅力。</p><div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:40%"></div></div></div><div class="sake-recommend">日本酒デビューに最適</div></article>
-            <article class="sake-card"><div class="sake-tag">定番感</div><h3>久保田 千寿</h3><div class="sake-origin">長岡市 / 朝日酒造</div><p>すっきり飲みやすく、どんな料理の邪魔もしにくい。そばや軽い和食との相性が特によく、日本酒好きなら誰もが知る信頼の銘柄。</p><div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:72%"></div></div></div><div class="sake-recommend">そば・和食に◎</div></article>
-            <article class="sake-card"><div class="sake-tag">辛口</div><h3>〆張鶴</h3><div class="sake-origin">村上市 / 宮尾酒造</div><p>キリッとした辛口と切れのある後味が特徴。ラーメン・とんかつ・濃い味の料理にも合い、食欲を維持してくれます。</p><div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:92%"></div></div></div><div class="sake-recommend">濃い味料理に最適</div></article>
-            <article class="sake-card"><div class="sake-tag">新潟市の酒</div><h3>鶴の友</h3><div class="sake-origin">新潟市西区 / 樋木酒造</div><p>新潟市に蔵を構える地元の地酒。地産地消を大切にした酒造りで地元ファンが多い、知る人ぞ知る隠れた銘柄です。</p><div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:60%"></div></div></div><div class="sake-recommend">「市内の蔵元」ならではの地元感</div></article>
+            <article class="sake-card">
+              <div class="sake-tag">海鮮に</div><h3>八海山</h3>
+              <div class="sake-origin">南魚沼市 / 八海醸造</div>
+              <p>淡麗辛口の代表格。刺身、のどぐろ、甘えびなど海鮮居酒屋の一杯目に最適。全国的な知名度も高く、話のきっかけにもなる定番銘柄。</p>
+              <div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:85%"></div></div></div>
+              <div class="sake-recommend">純米吟醸がバランス◎</div>
+            </article>
+            <article class="sake-card">
+              <div class="sake-tag">上品に</div><h3>鶴齢</h3>
+              <div class="sake-origin">南魚沼市 / 青木酒造</div>
+              <p>華やかな香りと深みある旨味のバランスが絶妙。和食や季節料理と合わせると特に印象がよく、食通の方に好まれることが多い一本。</p>
+              <div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:65%"></div></div></div>
+              <div class="sake-recommend">特別純米酒が人気</div>
+            </article>
+            <article class="sake-card">
+              <div class="sake-tag">やさしく</div><h3>越後鶴亀</h3>
+              <div class="sake-origin">新潟市西区 / 越後鶴亀</div>
+              <p>やわらかな甘みと穏やかな香りが特徴。日本酒が初めての方にもすすめやすく、味噌料理や野菜料理にも自然に合います。飲みやすさが魅力。</p>
+              <div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:40%"></div></div></div>
+              <div class="sake-recommend">日本酒デビューに最適</div>
+            </article>
+            <article class="sake-card">
+              <div class="sake-tag">定番感</div><h3>久保田 千寿</h3>
+              <div class="sake-origin">長岡市 / 朝日酒造</div>
+              <p>すっきり飲みやすく、どんな料理の邪魔もしにくい。そばや軽い和食との相性が特によく、日本酒好きなら誰もが知る信頼の銘柄。</p>
+              <div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:72%"></div></div></div>
+              <div class="sake-recommend">そば・和食に◎</div>
+            </article>
+            <article class="sake-card">
+              <div class="sake-tag">辛口</div><h3>〆張鶴</h3>
+              <div class="sake-origin">村上市 / 宮尾酒造</div>
+              <p>キリッとした辛口と切れのある後味が特徴。ラーメン・とんかつ・濃い味の料理にも合い、食欲を維持してくれます。</p>
+              <div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:92%"></div></div></div>
+              <div class="sake-recommend">濃い味料理に最適</div>
+            </article>
+            <article class="sake-card">
+              <div class="sake-tag">新潟市の酒</div><h3>鶴の友</h3>
+              <div class="sake-origin">新潟市西区 / 樋木酒造</div>
+              <p>新潟市に蔵を構える地元の地酒。地産地消を大切にした酒造りで地元ファンが多い、知る人ぞ知る隠れた銘柄です。</p>
+              <div class="sake-meter"><span>辛口度</span><div class="meter-bar"><div class="meter-fill" style="--fill:60%"></div></div></div>
+              <div class="sake-recommend">「市内の蔵元」ならではの地元感</div>
+            </article>
           </div>
-          <div class="sake-note"><div class="sake-note-icon">🍶</div><div><strong>ぽんしゅ館でお試しを：</strong>新潟駅のぽんしゅ館では上記の銘柄を含む100種類以上を少量ずつ試飲できます（有料）。好みの方向性を把握してから居酒屋で注文すると、より楽しめます。</div></div>
+
+          <div class="sake-note">
+            <div class="sake-note-icon">🍶</div>
+            <div><strong>ぽんしゅ館でお試しを：</strong>新潟駅のぽんしゅ館では上記の銘柄を含む100種類以上を少量ずつ試飲できます（有料）。好みの方向性を把握してから居酒屋で注文すると、より楽しめます。</div>
+          </div>
         </div>
       </section>
 
-      <!-- SOUVENIR -->
+      <!-- ============ SOUVENIR ============ -->
       <section id="souvenir" class="section section--contrast" aria-labelledby="souvenir-title">
         <div class="section-inner">
           <div class="section-heading">
@@ -320,11 +434,13 @@
             <h2 id="souvenir-title">新潟お土産<br>満足度ランキング</h2>
             <p class="section-desc">県外ユーザーの実体験投稿をもとにスコアリングした満足度ランキング（直近90日）。贈答・持ち帰り体験の口コミを重視して選んでいます。</p>
           </div>
+
           <div class="souvenir-where">
             <div class="where-card where-card--primary"><div class="where-icon">🏪</div><h3>CoCoLo新潟</h3><p>新潟駅直結のショッピングモール。笹団子・鮭茶漬け・へぎそばなど主要土産がほぼ揃います。帰りの乗車15分前でも間に合います。</p><span class="where-hours">6:00〜21:30（店舗により異なる）</span></div>
             <div class="where-card"><div class="where-icon">🍶</div><h3>ぽんしゅ館 CoCoLo新潟店</h3><p>越後の銘酒を網羅したセレクトショップ。試飲で気に入った銘柄をそのまま購入できるのが最大の魅力。地酒のお土産はここで完結します。</p><span class="where-hours">9:30〜20:30</span></div>
             <div class="where-card"><div class="where-icon">🎋</div><h3>越後獅子のさかたや</h3><p>笹団子・ちまきなど新潟の伝統菓子の専門店。包装も丁寧で、目上の方へのお土産に最適。消費期限の確認をお忘れなく。</p><span class="where-hours">CoCoLo新潟内</span></div>
           </div>
+
           <div class="souvenir-grid souvenir-grid--ranking">
             <article class="souvenir-card souvenir-card--featured">
               <div class="souvenir-rank-num">1</div>
@@ -382,28 +498,38 @@
               <div class="souvenir-tags"><span>家族・親向け</span><span>珍しさあり</span></div>
             </article>
           </div>
+
           <div class="souvenir-trend">
             <div class="trend-header">
               <span class="trend-badge">📈 急上昇中</span>
               <h3>今伸びているお土産</h3>
             </div>
             <div class="trend-items">
-              <div class="trend-item"><span class="trend-emoji">🍤</span><div><strong>竹徳の天ぷら</strong><p>日本酒との相性実食投稿が急増。「ごはんより酒に合う」と話題。日本酒好きへの贈り物に注目です。</p></div></div>
-              <div class="trend-item"><span class="trend-emoji">🐟</span><div><strong>加島屋の塩辛・茶漬け類</strong><p>実食満足度が急上昇中。鮭茶漬けとともに「リピ買い」「駅で追加購入」の投稿が増加中。</p></div></div>
-              <div class="trend-item"><span class="trend-emoji">🍡</span><div><strong>地元菓子店のどら焼き・わらび餅</strong><p>阿賀野市などニッチな店舗の開封投稿が増加。「地元感」「手作り感」が響いています。</p></div></div>
+              <div class="trend-item">
+                <span class="trend-emoji">🍤</span>
+                <div><strong>竹徳の天ぷら</strong><p>日本酒との相性実食投稿が急増。「ごはんより酒に合う」と話題。日本酒好きへの贈り物に注目です。</p></div>
+              </div>
+              <div class="trend-item">
+                <span class="trend-emoji">🐟</span>
+                <div><strong>加島屋の塩辛・茶漬け類</strong><p>実食満足度が急上昇中。鮭茶漬けとともに「リピ買い」「駅で追加購入」の投稿が増加中。</p></div>
+              </div>
+              <div class="trend-item">
+                <span class="trend-emoji">🍡</span>
+                <div><strong>地元菓子店のどら焼き・わらび餅</strong><p>阿賀野市などニッチな店舗の開封投稿が増加。「地元感」「手作り感」が響いています。</p></div>
+              </div>
             </div>
           </div>
-          <div class="souvenir-alert">
-            <span>⚠️</span>
-            <div><strong>注意：亀田製菓の柿の種・サラダホープ</strong>は、「外国産米使用」を懸念する投稿が増加しており購入控え傾向が見られます。職場配りには岩塚製菓など他の米菓メーカーも候補に。</div>
-          </div>
+
+
           <div class="souvenir-sake-note">
             <div class="sake-note-icon">🍶</div>
             <div><strong>日本酒好きへは：地酒ミニボトル（ぽんしゅ館）</strong><br>試飲して気に入った銘柄をそのまま持ち帰るのが最もスマートな選び方。贈る相手がお酒を飲む方の場合に絞ると上品な贈り物になります。目安500〜3,000円。</div>
           </div>
+
         </div>
       </section>
 
+      <!-- ============ SPOTS ============ -->
       <section id="spots" class="section" aria-labelledby="spots-title">
         <div class="section-inner">
           <div class="section-heading">
@@ -422,12 +548,19 @@
         </div>
       </section>
 
+      <!-- ============ ACCESS ============ -->
       <section class="section section--contrast section--access" aria-label="アクセス情報">
         <div class="section-inner">
           <div class="section-heading"><p class="eyebrow">Access Information</p><h2>市役所へのアクセス</h2></div>
           <div class="access-buildings">
-            <div class="access-building"><h3 class="access-building-name">🏛️ 市役所本館</h3><p class="access-building-addr">新潟市中央区学校町通1番町602番地1</p></div>
-            <div class="access-building"><h3 class="access-building-name">🏢 古町庁舎（ルフル）</h3><p class="access-building-addr">新潟市中央区古町通7番町1010 古町ルフル5〜6階</p></div>
+            <div class="access-building">
+              <h3 class="access-building-name">🏛️ 市役所本館</h3>
+              <p class="access-building-addr">新潟市中央区学校町通1番町602番地1</p>
+            </div>
+            <div class="access-building">
+              <h3 class="access-building-name">🏢 古町庁舎（ルフル）</h3>
+              <p class="access-building-addr">新潟市中央区古町通7番町1010 古町ルフル5〜6階</p>
+            </div>
           </div>
           <div class="access-grid">
             <div class="access-card"><div class="access-icon">🚶</div><h3>徒歩で</h3><p>新潟駅から約20〜25分。信濃川沿いを歩くルートは景色も楽しめます。</p></div>
@@ -438,6 +571,7 @@
         </div>
       </section>
 
+      <!-- ============ SOURCES ============ -->
       <section class="section section--sources" aria-labelledby="sources-title">
         <div class="section-inner">
           <div class="section-heading"><p class="eyebrow">Source Check</p><h2 id="sources-title">確認した情報源</h2><p class="section-desc">営業時間・定休日・料金は変更される場合があります。ご利用前に店舗ページか電話でご確認ください。</p></div>
@@ -467,21 +601,34 @@
 
     <footer class="site-footer">
       <div class="footer-inner">
-        <div class="footer-brand"><div class="brand-seal brand-seal--sm"><span class="seal-kanji">新</span></div><div><p class="footer-title">新潟案内</p><p class="footer-sub">Niigata City Hospitality Guide</p></div></div>
+        <div class="footer-brand">
+          <div class="brand-seal brand-seal--sm"><span class="seal-kanji">新</span></div>
+          <div><p class="footer-title">新潟案内</p><p class="footer-sub">Niigata City Hospitality Guide</p></div>
+        </div>
         <p class="footer-note">本ガイドに掲載の情報は定期的に見直していますが、実際の営業状況は各店舗・施設へ直接ご確認ください。</p>
         <p class="footer-copy">© 2025 Niigata City Hospitality Guide</p>
       </div>
     </footer>
 
     <script>
+    /* Cursor glow */
     const glow = document.querySelector('.cursor-glow');
     let mx = -200, my = -200;
     document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
     (function loop() { glow.style.transform = `translate(${mx - 200}px, ${my - 200}px)`; requestAnimationFrame(loop); })();
+
+    /* Scroll progress */
     const fill = document.querySelector('.scroll-fill');
-    window.addEventListener('scroll', () => { const max = document.documentElement.scrollHeight - window.innerHeight; fill.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%'; }, { passive: true });
+    window.addEventListener('scroll', () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      fill.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
+    }, { passive: true });
+
+    /* Header scroll state */
     const header = document.getElementById('site-header');
     window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+
+    /* Mobile nav */
     const toggle = document.querySelector('.nav-toggle');
     const nav = document.querySelector('nav');
     toggle.addEventListener('click', () => {
@@ -489,6 +636,8 @@
       toggle.setAttribute('aria-expanded', String(!open));
       nav.classList.toggle('nav--open', !open);
     });
+
+    /* Lunch toggle */
     const toggleBtns = document.querySelectorAll('.toggle-btn');
     const honkan = document.getElementById('lunch-honkan');
     const rufuru = document.getElementById('lunch-rufuru');
@@ -498,16 +647,24 @@
         btn.classList.add('active');
         btn.setAttribute('aria-selected', 'true');
         if (btn.dataset.target === 'honkan') {
-          honkan.classList.remove('hidden'); rufuru.classList.add('hidden');
+          honkan.classList.remove('hidden');
+          rufuru.classList.add('hidden');
         } else {
-          rufuru.classList.remove('hidden'); honkan.classList.add('hidden');
+          rufuru.classList.remove('hidden');
+          honkan.classList.add('hidden');
         }
       });
     });
-    const revealEls = document.querySelectorAll('.console-card, .pillar, .rail-item, .spot-card, .dinner-card, .sake-card, .souvenir-card, .spot-mini, .access-card, .section-heading, .dinner-feature, .sake-intro, .culture-strip, .souvenir-where, .lunch-note, .dinner-tip, .sake-note, .lunch-toggle, .access-building, .souvenir-trend, .souvenir-alert, .souvenir-sake-note');
+
+    /* Reveal on scroll */
+    const revealEls = document.querySelectorAll('.console-card, .pillar, .rail-item, .spot-card, .dinner-card, .sake-card, .souvenir-card, .spot-mini, .access-card, .section-heading, .dinner-feature, .sake-intro, .culture-strip, .souvenir-where, .lunch-note, .dinner-tip, .sake-note, .lunch-toggle, .access-building');
     revealEls.forEach((el, i) => { el.classList.add('reveal'); el.style.setProperty('--d', `${(i % 8) * 60}ms`); });
-    const io = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } }); }, { threshold: 0.1 });
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
     revealEls.forEach(el => io.observe(el));
+
+    /* Stat counter */
     const statNums = document.querySelectorAll('.stat-num[data-count]');
     const statObs = new IntersectionObserver(entries => {
       entries.forEach(e => {

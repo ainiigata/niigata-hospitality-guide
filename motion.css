@@ -1,0 +1,73 @@
+/* Motion is added only once the section observers are ready. */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-motion="on"] .shop-stop[data-welcome-stop] {
+    position: relative;
+    --clock-delay: 0ms;
+  }
+
+  html[data-motion="on"] .shop-stop[data-welcome-stop]::before {
+    content: "";
+    position: absolute;
+    inset: -1px 0 auto;
+    height: 2px;
+    background: linear-gradient(90deg, #a3462a, #ad8b60 56%, #b8bda9);
+    transform-origin: left;
+    pointer-events: none;
+  }
+
+  html[data-motion="on"] .shop-stop[data-welcome-stop="waiting"]::before {
+    transform: scaleX(0);
+  }
+
+  html[data-motion="on"] .shop-stop[data-welcome-stop="playing"]::before {
+    animation: welcome-clockline 640ms cubic-bezier(.2,.7,.25,1) var(--clock-delay) both;
+  }
+
+  html[data-motion="on"] .shop-stop[data-welcome-stop="playing"] time {
+    display: inline-block;
+    transform-origin: left center;
+    animation: welcome-clockstamp 740ms ease-out var(--clock-delay) both;
+  }
+
+  html[data-motion="on"] .story[data-welcome-depth] > img {
+    top: -20px;
+    bottom: auto;
+    height: calc(100% + 40px);
+    transform: translate3d(0, var(--welcome-shift, 0px), 0);
+    transition: none;
+  }
+
+  html[data-motion="on"] .route-plan[data-welcome-steps] > li {
+    animation: welcome-route-entry 470ms cubic-bezier(.15,.7,.25,1) both;
+  }
+
+  html[data-motion="on"] .route-plan[data-welcome-steps] > li:nth-child(2) { animation-delay: 130ms; }
+  html[data-motion="on"] .route-plan[data-welcome-steps] > li:nth-child(3) { animation-delay: 260ms; }
+}
+
+@media (min-width: 761px) {
+  html[data-motion="on"] .shop-stop[data-welcome-stop]:nth-child(2) { --clock-delay: 190ms; }
+  html[data-motion="on"] .shop-stop[data-welcome-stop]:nth-child(3) { --clock-delay: 380ms; }
+}
+
+@media (max-width: 760px) {
+  html[data-motion="on"] .shop-stop[data-welcome-stop] time { align-self: start; }
+}
+
+html[data-motion="off"] .stories .story:hover img { transform: none; transition: none; }
+
+@keyframes welcome-clockline {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes welcome-clockstamp {
+  0% { transform: translateY(3px); }
+  45% { color: #873319; transform: translateY(-1px) scale(1.09); }
+  100% { transform: none; }
+}
+
+@keyframes welcome-route-entry {
+  from { opacity: .25; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}

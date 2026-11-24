@@ -177,7 +177,7 @@
     }
 
     function scrollToGuide() {
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const reduce = document.documentElement.dataset.motion === "off" || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       guide.scrollIntoView({ behavior: reduce ? "instant" : "smooth", block: "start" });
     }
 
@@ -320,9 +320,18 @@
 
     document.addEventListener("click", event => {
       if (event.defaultPrevented || event.button > 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      const control = event.target.closest?.("[data-save],[data-saved],[data-detail],[data-back-saved],[data-filter],[data-area-filter],[data-category],a[href^='#']");
+      const control = event.target.closest?.("[data-campus-lunch],[data-save],[data-saved],[data-detail],[data-back-saved],[data-filter],[data-area-filter],[data-category],a[href^='#']");
       if (!control) return;
-      if (control.hasAttribute("data-save")) {
+      if (control.hasAttribute("data-campus-lunch")) {
+        event.preventDefault();
+        category = "lunch";
+        area = control.dataset.campusLunch;
+        limit = pageSize;
+        renderList();
+        rememberHash("#lunch", "pushState");
+        scrollToGuide();
+        tabs.querySelector(".is-active")?.focus({preventScroll:true});
+      } else if (control.hasAttribute("data-save")) {
         event.preventDefault();
         toggleSave(control.dataset.save);
       } else if (control.hasAttribute("data-saved")) {

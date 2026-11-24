@@ -34,41 +34,90 @@
   });
   matchMedia('(min-width:761px)').addEventListener('change',event => { if(event.matches)setMenu(false); });
 
-  const motion = matchMedia('(prefers-reduced-motion:reduce)');
-  const frames = [...document.querySelectorAll('.hero-shot')];
-  const captions = ['萬代橋と信濃川','古町・鍋茶屋通り','山の下海浜公園の夕日'];
+  const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
   const motionButton = document.querySelector('#motion-control');
-  let slide = 0, timer = 0, playing = !motion.matches, heroVisible = true;
-  function showSlide(next) {
-    slide = (next + frames.length) % frames.length;
-    frames.forEach((frame,index) => frame.classList.toggle('current', index === slide));
-    document.querySelector('#slide-location').textContent = captions[slide];
-    document.querySelector('#current-slide').textContent = String(slide + 1).padStart(2,'0');
-  }
-  function schedule() {
-    clearInterval(timer);
-    if(playing && heroVisible && !document.hidden) timer = setInterval(() => showSlide(slide + 1),10500);
-    motionButton.innerHTML = window.GuideIcons(playing ? 'pause' : 'play');
-    motionButton.setAttribute('aria-label','風景の自動切り替えを'+(playing ? '停止' : '再生'));
-    motionButton.setAttribute('aria-pressed',String(playing));
-  }
-  document.querySelectorAll('[data-slide]').forEach(control => control.addEventListener('click',() => {
-    playing = false;
-    showSlide(slide + Number(control.dataset.slide)); schedule();
-  }));
-  motionButton.addEventListener('click',() => { playing = !playing; schedule(); });
-  motion.addEventListener('change',() => { if(motion.matches)playing=false; schedule(); });
-  document.addEventListener('visibilitychange',schedule);
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(([entry]) => {heroVisible=entry.isIntersecting; schedule();}).observe(document.querySelector('.hero'));
-    if(!motion.matches){
-      const reveal = new IntersectionObserver(entries => entries.forEach(entry => {
-        if(entry.isIntersecting){entry.target.classList.add('in-view');reveal.unobserve(entry.target);}
-      }),{threshold:.08});
-      document.querySelectorAll('.section-head,.bento-card,.story,.shop-box,.route-inner').forEach(node => reveal.observe(node));
+  const cover = document.querySelector('.welcome');
+  const gallery = document.querySelector('.scenes');
+  const frames = [...gallery.querySelectorAll('.hero-shot')];
+  const captions = [
+    ['萬代橋と信濃川','Shinano River'],
+    ['越後平野の田園','Echigo Plain'],
+    ['古町・鍋茶屋通り','Furumachi'],
+    ['山の下海浜公園の夕日','Sea of Japan']
+  ];
+  const interval = 8500;
+  let index = 0, timer = 0, deadline = 0, remaining = interval;
+  let coverVisible = true, pointerInside = false, focusInside = false;
+  let postcardTurn;
+  function refreshPlayback() {
+    if (timer) {
+      clearTimeout(timer);
+      remaining = Math.max(0, deadline - performance.now());
+      timer = 0;
+    }
+    const active = document.documentElement.dataset.motion === 'on';
+    const idle = !coverVisible || document.hidden;
+    cover.classList.toggle('is-idle',idle);
+    gallery.classList.toggle('gallery-paused',pointerInside || focusInside);
+    if (active && !idle && !pointerInside && !focusInside) {
+      deadline = performance.now() + remaining;
+      timer = setTimeout(() => { timer=0; changeScene(index+1); }, remaining);
     }
   }
-  schedule();
+  function changeScene(next) {
+    clearTimeout(timer); timer=0; remaining=interval;
+    index=(next+frames.length)%frames.length;
+    frames.forEach((frame,i) => frame.classList.toggle('current',i===index));
+    document.querySelector('#slide-location').textContent=captions[index][0];
+    document.querySelector('#photo-english').textContent=captions[index][1];
+    document.querySelector('#current-slide').textContent=String(index+1).padStart(2,'0');
+    gallery.querySelector('.meter').replaceChildren(document.createElement('i'));
+    if(document.documentElement.dataset.motion === 'on' && gallery.animate) {
+      postcardTurn?.cancel();
+      postcardTurn = gallery.querySelector('.postcard').animate([
+        {transform:'rotate(-2deg) translateY(0)'},
+        {transform:'rotate(-3.3deg) translateY(-5px)',offset:.34},
+        {transform:'rotate(-2deg) translateY(0)'}
+      ],{duration:780,easing:'ease-in-out'});
+    }
+    refreshPlayback();
+  }
+  function applyMotion(preference) {
+    document.documentElement.dataset.motion=motionPreference.matches || preference === 'off' ? 'off' : 'on';
+    const active = document.documentElement.dataset.motion === 'on';
+    const systemReduced = motionPreference.matches;
+    motionButton.disabled = systemReduced;
+    motionButton.setAttribute('aria-pressed', String(active));
+    motionButton.innerHTML = window.GuideIcons(active ? 'pause' : 'play') + '<span>' +
+      (systemReduced ? '動きを控えています' : active ? '動きを止める' : '動きを再生') + '</span>';
+    if(!active) postcardTurn?.cancel();
+    refreshPlayback();
+  }
+  function storedMotion() {
+    try { return localStorage.getItem('niigata-guide:motion'); } catch {return null;}
+  }
+  gallery.querySelectorAll('[data-slide]').forEach(button => button.addEventListener('click',() => changeScene(index+Number(button.dataset.slide))));
+  motionButton.addEventListener('click',() => {
+    const next=document.documentElement.dataset.motion==='on'?'off':'on';
+    try { localStorage.setItem('niigata-guide:motion',next); } catch {}
+    applyMotion(next);
+    if(next==='on') {focusInside=false; pointerInside=false; refreshPlayback();}
+  });
+  gallery.addEventListener('pointerenter',event => { if(event.pointerType==='mouse'){pointerInside=true;refreshPlayback();} });
+  gallery.addEventListener('pointerleave',() => {pointerInside=false;refreshPlayback();});
+  gallery.addEventListener('focusin',() => {focusInside=true;refreshPlayback();});
+  gallery.addEventListener('focusout',event => { if(!gallery.contains(event.relatedTarget)){focusInside=false;refreshPlayback();} });
+  motionPreference.addEventListener('change',() => applyMotion(storedMotion()));
+  document.addEventListener('visibilitychange',refreshPlayback);
+  if('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {coverVisible=entry.isIntersecting;refreshPlayback();}).observe(cover);
+    const reveal = new IntersectionObserver(entries => entries.forEach(entry => {
+      if(entry.isIntersecting){entry.target.classList.add('in-view');reveal.unobserve(entry.target);}
+    }),{threshold:.08});
+    document.querySelectorAll('.section-head,.bento-card,.story,.shop-box,.route-inner').forEach(node => reveal.observe(node));
+  }
+  applyMotion(storedMotion());
+  setTimeout(() => cover.classList.add('delivered'),1300);
 
   const plans = {
     honkan:[['cityhall','市役所本館','学校町通の本館を起点に。'],['kokoro','中華そば こころ','市役所向かいで燕の背脂ラーメンを。'],['hakusan','白山公園','食後は池のほとりをひと回り。']],

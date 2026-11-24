@@ -2,25 +2,119 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#172f30"><meta name="description" content="新潟駅で朝買える駅弁、市役所周辺のランチ、越後の地酒、古町や萬代橋の散策。出張や短い滞在を楽しむための新潟市のおもてなしガイドです。">
-<title>新潟まち手帖｜新潟市の食・街歩き・おもてなしガイド</title>
-<link rel="icon" href="assets/mark.svg"><link rel="preload" href="assets/bridge-day.webp" as="image"><link rel="stylesheet" href="styles.css">
-<script defer src="directory.js"></script><script defer src="bento.js"></script><script defer src="app.js"></script><script defer src="explore.js"></script>
+<meta name="theme-color" content="#172f30"><meta name="description" content="県外から新潟市役所へお越しの皆さまに、本館・ふるまち庁舎への行き方、朝の駅弁、昼休みの食事処、帰り道の散策をご案内します。">
+<title>ようこそ、新潟市へ。｜新潟まち手帖・来庁者のおもてなしガイド</title>
+<link rel="icon" href="assets/mark.svg"><link rel="preload" href="assets/bridge-day.webp" as="image"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="welcome.css"><link rel="stylesheet" href="access.css"><link rel="stylesheet" href="motion.css">
+<script>
+try {
+  const reduced = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  document.documentElement.dataset.motion = reduced || localStorage.getItem('niigata-guide:motion') === 'off' ? 'off' : 'on';
+} catch { document.documentElement.dataset.motion = matchMedia('(prefers-reduced-motion:reduce)').matches ? 'off' : 'on'; }
+</script>
+<script defer src="directory.js"></script><script defer src="bento.js"></script><script defer src="app.js?v=2"></script><script defer src="explore.js?v=2"></script><script defer src="motion.js"></script>
 </head>
 <body id="top"><a href="#main" class="skip">本文へ移動</a>
 <header class="mast"><div class="mast-in wrap">
 <a class="brand" href="#top" aria-label="新潟まち手帖 トップ"><img src="assets/mark.svg" width="41" height="41" alt=""><span><strong>新潟まち手帖</strong><small>NIIGATA CITY GUIDE</small></span></a>
-<nav class="toplinks" aria-label="主な案内"><a href="#bento">朝のお弁当</a><a href="#lunch" data-category="lunch">食と地酒</a><a href="#spots" data-category="walk">街歩き</a><a href="#access" data-category="access">アクセス</a></nav>
+<nav class="toplinks" aria-label="主な案内"><a href="#visit">来庁案内</a><a href="#bento">朝のお弁当</a><a href="#lunch" data-category="lunch">食と地酒</a><a href="#spots" data-category="walk">街歩き</a></nav>
 <div class="head-actions"><button class="saved-btn" data-saved><i data-icon="bookmark"></i><span>旅のしおり</span><small data-count>0</small></button><button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く"><i data-icon="menu"></i></button></div>
-</div><nav id="mobile-menu" hidden aria-label="モバイルメニュー"><a href="#bento">朝のお弁当</a><a href="#lunch" data-category="lunch">昼ごはん</a><a href="#dinner" data-category="dinner">夜ごはん</a><a href="#sake" data-category="sake">越後の地酒</a><a href="#souvenir" data-category="gift">お土産</a><a href="#spots" data-category="walk">街歩き</a><a href="#access" data-category="access">アクセス</a></nav></header>
+</div><nav id="mobile-menu" hidden aria-label="モバイルメニュー"><a href="#visit">来庁案内</a><a href="#bento">朝のお弁当</a><a href="#lunch" data-category="lunch">昼ごはん</a><a href="#dinner" data-category="dinner">夜ごはん</a><a href="#sake" data-category="sake">越後の地酒</a><a href="#souvenir" data-category="gift">お土産</a><a href="#spots" data-category="walk">街歩き</a></nav></header>
 <main id="main">
-<section class="hero" aria-labelledby="cover-title" aria-roledescription="カルーセル">
-<div class="slides" aria-hidden="true"><img class="hero-shot current" src="assets/bridge-day.webp" alt="" fetchpriority="high"><img class="hero-shot" src="assets/furumachi.webp" alt=""><img class="hero-shot" src="assets/sea.webp" alt=""></div><div class="shade"></div>
-<div class="wrap hero-in"><div class="cover-copy"><div class="kicker light"><span></span>NIIGATA HOSPITALITY GUIDE</div><h1 id="cover-title">新潟を、<br>味わい歩く<span class="punct">。</span></h1>
-<p>朝の駅弁から、古町の小路、夜の一献まで。<br>新潟を訪れる人のための、食と街歩きの手帖です。</p>
-<a class="button primary" href="#bento"><i data-icon="bento"></i>朝のお弁当を探す</a></div>
-<div class="cover-bottom"><span class="location"><i data-icon="pin"></i><span id="slide-location">萬代橋と信濃川</span></span><div class="gallery-nav"><span id="current-slide">01</span><span class="gallery-line"></span><span class="slide-total">03</span><button data-slide="-1" aria-label="前の風景"><i data-icon="left"></i></button><button data-slide="1" aria-label="次の風景"><i data-icon="chevron"></i></button><button id="motion-control" aria-label="風景の自動切り替えを再生" aria-pressed="false"><i data-icon="play"></i></button></div></div></div>
+<section class="welcome" aria-labelledby="cover-title">
+  <div class="water-lines" aria-hidden="true">
+    <svg viewBox="0 0 1600 210" preserveAspectRatio="none" focusable="false"><defs><path id="river-line" d="M-120 115 C160 0 300 270 610 150 S940 35 1210 115 S1510 172 1750 52"/></defs>
+      <g class="water-ink"><use href="#river-line" y="-32"/><use href="#river-line" y="-20"/><use href="#river-line" y="-8"/><use href="#river-line" y="4"/><use href="#river-line" y="16"/><use href="#river-line" y="28"/><use href="#river-line" y="40"/><use href="#river-line" y="52"/><use href="#river-line" y="64"/></g>
+      <g class="water-glint"><use href="#river-line" y="-8"/><use href="#river-line" y="28"/></g>
+    <g transform="translate(625 135)"><g class="river-skiff">
+        <g class="river-echo" fill="none" stroke="#68908a"><ellipse rx="35" ry="5" cy="4"/><ellipse rx="53" ry="9" cy="4"/></g>
+        <g class="folded-boat" stroke="#a65b3a" stroke-width="1.6" stroke-linejoin="round"><path d="m-30-10 21 3 15-22 4 23 21-9L20 0l-41 1z" fill="#d5875d"/><path d="m-9-7 15-22 4 23-8 3z" fill="#f9dab3"/><path d="m-30-10 32 7 29-12" fill="none"/></g>
+      </g></g></svg>
+  </div>
+  <div class="wrap invitation">
+    <div class="letter">
+      <p class="recipient"><span aria-hidden="true"></span>新潟市役所へお越しの皆さまへ</p>
+      <h1 id="cover-title"><span class="title-line"><span>ようこそ、</span></span><span class="title-line"><span>新潟市へ<span class="stop-mark">。</span></span></span></h1>
+      <p class="letter-copy">遠方からお越しいただき、ありがとうございます。<br class="wide-only">お昼には新潟のお米を、お帰りの前には川辺の散歩を。<br class="wide-only">どうぞ、ごゆっくりお過ごしください。</p>
+      <div class="welcome-actions">
+        <a class="button arrival-button" href="#visit"><i data-icon="pin"></i>訪問先の庁舎を確認</a>
+        <a class="bento-shortcut" href="#bento"><i data-icon="bento"></i>朝のお弁当を見る</a>
+      </div>
+    </div>
+    <div class="scenes" role="region" aria-roledescription="カルーセル" aria-label="新潟からの風景絵はがき">
+      <div class="postcard-stack">
+        <div class="postcard">
+          <div class="postcard-window">
+            <img class="hero-shot current" src="assets/bridge-day.webp" alt="" fetchpriority="high" width="2100" height="1575">
+            <img class="hero-shot" src="assets/rice.webp" alt="" width="1200" height="900">
+            <img class="hero-shot" src="assets/furumachi.webp" alt="" width="1200" height="900">
+            <img class="hero-shot" src="assets/sea.webp" alt="" width="1200" height="793">
+          </div>
+          <div class="postcard-caption"><div><i data-icon="pin"></i><span id="slide-location">萬代橋と信濃川</span></div><span class="postcard-script" id="photo-english" lang="en">Shinano River</span></div>
+        </div>
+        <div class="postmark" aria-hidden="true"><small>FROM</small><strong>新 潟</strong><span>NIIGATA</span></div>
+      </div>
+      <div class="scene-controls">
+        <div class="scene-pager"><span id="current-slide">01</span><span class="meter"><i></i></span><span class="total">04</span><button data-slide="-1" aria-label="前の風景"><i data-icon="left"></i></button><button data-slide="1" aria-label="次の風景"><i data-icon="chevron"></i></button></div>
+        <button id="motion-control" aria-pressed="true" aria-label="ページの動き"><i data-icon="pause"></i><span>動きを止める</span></button>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section id="visit" class="visit-section" aria-labelledby="visit-title">
+  <div class="wrap">
+    <header class="visit-heading">
+      <h2 id="visit-title">本日の訪問先</h2>
+      <p>ご案内に記載された庁舎名をお確かめください。<br>新潟駅からは同じバスで、降りる停留所が異なります。</p>
+    </header>
+
+    <div class="visit-cards">
+      <article class="visit-card visit-card--honkan" aria-labelledby="visit-honkan">
+        <h3 id="visit-honkan">新潟市役所 本館</h3>
+        <ol class="visit-journey" aria-label="本館へのバス経路">
+          <li>
+            <span class="visit-direction">乗る</span>
+            <div><strong>新潟駅 6番のりば</strong><span class="visit-bus">B1 萬代橋ライン</span></div>
+          </li>
+          <li>
+            <span class="visit-direction">降りる</span>
+            <div><strong>市役所前</strong><span class="visit-bus">新潟駅から約12分</span></div>
+          </li>
+        </ol>
+        <p class="visit-address"><i data-icon="pin" aria-hidden="true"></i>新潟市中央区学校町通1番町602番地1</p>
+        <div class="visit-actions">
+          <button type="button" class="visit-detail" data-detail="cityhall" aria-haspopup="dialog" aria-label="新潟市役所本館の地図とアクセス">地図・アクセス<i data-icon="chevron" aria-hidden="true"></i></button>
+          <a href="#lunch" data-campus-lunch="市役所本館" aria-label="市役所本館近くの昼ごはんを探す"><i data-icon="bowl" aria-hidden="true"></i>近くで昼ごはん</a>
+        </div>
+      </article>
+
+      <article class="visit-card visit-card--furumachi" aria-labelledby="visit-furumachi">
+        <h3 id="visit-furumachi">ふるまち庁舎</h3>
+        <ol class="visit-journey" aria-label="ふるまち庁舎へのバス経路">
+          <li>
+            <span class="visit-direction">乗る</span>
+            <div><strong>新潟駅 6番のりば</strong><span class="visit-bus">B1 萬代橋ライン</span></div>
+          </li>
+          <li>
+            <span class="visit-direction">降りる</span>
+            <div><strong>古町</strong><span class="visit-bus">古町ルフル 3〜6階へ</span></div>
+          </li>
+        </ol>
+        <p class="visit-address"><i data-icon="pin" aria-hidden="true"></i>新潟市中央区古町通7番町1010番地</p>
+        <div class="visit-actions">
+          <button type="button" class="visit-detail" data-detail="rufuru" aria-haspopup="dialog" aria-label="ふるまち庁舎の地図とアクセス">地図・アクセス<i data-icon="chevron" aria-hidden="true"></i></button>
+          <a href="#lunch" data-campus-lunch="ふるまち庁舎" aria-label="ふるまち庁舎近くの昼ごはんを探す"><i data-icon="bowl" aria-hidden="true"></i>近くで昼ごはん</a>
+        </div>
+      </article>
+    </div>
+
+    <div class="visit-sources" aria-label="公式の交通案内">
+      <a href="https://www.city.niigata.lg.jp/shisetsu/tyousya/access.html">新潟市の庁舎案内<i data-icon="external" aria-hidden="true"></i></a>
+      <a href="https://www.niigata-kotsu.co.jp/~noriai/route-bus/timetable/route/route_c.html">新潟交通のバス時刻表<i data-icon="external" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
 <nav class="chapterbar" aria-label="目的から探す"><div class="chapters wrap">
 <a href="#bento"><i data-icon="bento"></i>朝のお弁当</a><a href="#lunch" data-category="lunch"><i data-icon="bowl"></i>昼ごはん</a><a href="#dinner" data-category="dinner"><i data-icon="chop"></i>夜ごはん</a><a href="#sake" data-category="sake"><i data-icon="sake"></i>地酒</a><a href="#souvenir" data-category="gift"><i data-icon="gift"></i>お土産</a><a href="#spots" data-category="walk"><i data-icon="walk"></i>街歩き</a></div></nav>
 <section id="bento" class="feature section wrap"><div class="section-head"><div><div class="kicker"><span></span>MORNING BENTO</div><h2>朝、駅で選ぶ新潟の味。</h2><p>鮭の焼き漬け、県産コシヒカリ、新発田牛。ひと折に詰まった越後を旅のお供に。</p></div><a class="outline-link" href="#shops"><i data-icon="clock"></i>売り場の開店時刻</a></div>
@@ -61,15 +155,15 @@
 </div>
 
 <p class="shop-note">時刻は売り場の開店時刻です。商品の入荷・在庫は当日店頭でご確認ください。販売情報は2026年11月24日確認。</p></div><aside class="late-bento"><div class="late-time"><i data-icon="bento"></i>10:00 から</div><div><h3>少し遅い朝は、三条車麩のタレカツを。</h3><p>駅南側のSUZUVEL（スズベル）では、だしを含ませた車麩をカツにしたライスボウルを持ち帰れます。988円（税込）。十六穀米か玄米を選べます。</p><a href="https://suzuvel.owst.jp/takeouts">公式テイクアウトメニュー</a></div></aside></section>
-<section class="stories" id="culture"><div class="wrap section"><div class="section-head"><div><div class="kicker"><span></span>FIELD NOTES</div><h2>新潟の風土にふれる。</h2><p>米どころの風景から、港町に残る路地と酒場へ。</p></div></div><div class="story-grid">
+<section class="stories" id="culture"><div class="wrap section"><div class="section-head"><div><div class="kicker"><span></span>FIELD NOTES</div><h2>ご用のあとは、新潟の街へ。</h2><p>本館での用事のあとなら白山界隈へ。ふるまち庁舎からは、かつての花街を歩いてみませんか。</p></div></div><div class="story-grid">
 <article class="story story-large"><img src="assets/rice.webp" loading="lazy" alt="越後平野の田園と大きな木"><div class="story-info"><div class="story-en">RICE COUNTRY</div><h3>米どころの一粒を。</h3><p>越後平野に広がる田んぼ。白いごはんを主役にするなら、昼は新潟の米を握ったおにぎりを。</p><button data-detail="hachiban" class="story-link">おにぎり処 八番を読む<i data-icon="book"></i></button></div></article>
 <article class="story"><img src="assets/furumachi.webp" loading="lazy" alt="古町の鍋茶屋通り"><div class="story-info"><div class="story-en">OLD TOWN</div><h3>古町、小路を辿る。</h3><button data-detail="furumachi" class="story-link">古町の歩き方<i data-icon="book"></i></button></div></article>
 <article class="story"><img src="assets/sake-gen.webp" loading="lazy" alt="徳利から盃に注ぐ日本酒のイメージ"><div class="story-info"><div class="story-en">LOCAL SAKE</div><h3>越後の酒に出会う。</h3><a href="#sake" data-category="sake" class="story-link">地酒の選び方<i data-icon="book"></i></a></div></article></div></div></section>
-<section id="guide" class="section wrap guide-section"><div class="section-head"><div><div class="kicker"><span></span>LOCAL DIRECTORY</div><h2>まちの案内帖</h2><p>来庁日の昼休み、夕食前のひと歩き。行きたい場所を選んで、旅のしおりに。</p></div></div>
+<section id="guide" class="section wrap guide-section"><div class="section-head"><div><div class="kicker"><span></span>LOCAL DIRECTORY</div><h2>来庁日の食事と街歩き</h2><p>お昼はご訪問先の近くで。帰りの列車まで時間があれば、気になるお店やお土産をしおりにどうぞ。</p></div></div>
 <div id="guide-tabs" aria-label="案内の種類"></div><div id="guide-area" aria-label="ランチのエリア"></div><p id="guide-summary" aria-live="polite"></p><div id="guide-list"></div><button id="guide-more" class="outline-link">もっと見る</button><noscript><p>店舗や散策先の一覧を表示するには、JavaScriptを有効にしてください。</p></noscript></section>
 <section class="routes"><div class="wrap route-inner"><div><div class="kicker light"><span></span>SHORT STAY</div><h2>空き時間の、<br>よりみち案内。</h2><p>市役所での用事の前後に。<br>出発地点から選ぶ、小さな散策プラン。</p></div>
 <div class="route-content"><div class="route-buttons" aria-label="散策プランの出発地点"><button class="active" aria-pressed="true" data-route="honkan">市役所本館から</button><button aria-pressed="false" data-route="furumachi">ふるまち庁舎から</button><button aria-pressed="false" data-route="station">新潟駅から</button></div><div id="route-panel" aria-live="polite"></div></div></div></section>
-</main>
+<section class="farewell"><div class="wrap"><div><span class="farewell-line" aria-hidden="true"></span><h2>どうぞ、よい帰り道を。</h2><p>今日の新潟で、お気に入りのひと品や風景に出会えますように。<br>またのお越しをお待ちしています。</p></div><a class="outline-link" href="#souvenir" data-category="gift"><i data-icon="gift"></i>帰りに選ぶお土産</a></div></section></main>
 <footer><div class="wrap"><div class="footer-line"><a class="brand" href="#top"><img src="assets/mark.svg" width="41" height="41" alt=""><span><strong>新潟まち手帖</strong><small>NIIGATA CITY GUIDE</small></span></a><a href="#top" class="backtop">ページの先頭へ<i data-icon="up"></i></a></div>
 <details class="credits"><summary>掲載情報・写真のクレジット</summary><div><p>営業時間・価格・取扱商品は変更されることがあります。売り場や各項目の出典リンクから最新の案内をご確認ください。</p><p>風景写真は下記の作品をサイズ調整・WebP変換し、表示時にトリミングしています。各写真には記載のライセンスが適用されます。</p><ul><li><a href="https://www.city.niigata.lg.jp/shisei/seisaku/it/open-data/opendata-gazou/od-fukei/od-bandaibashi/od-bandaibashi008.html">萬代橋4</a> ／ 新潟市（政策企画部広報課） ／ <a href="https://creativecommons.org/licenses/by/2.1/jp/">CC BY 2.1 JP</a></li><li><a href="https://commons.wikimedia.org/wiki/File:Nabedyaya-dori_Niigata_20131021.JPG">Nabedyaya-dori Niigata 20131021.JPG</a> ／ DAI-nk ／ <a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></li><li><a href="https://commons.wikimedia.org/wiki/File:NiigataCityOpenData_denen007.jpg">NiigataCityOpenData denen007.jpg</a> ／ 新潟市 (Niigata City) ／ <a href="https://creativecommons.org/licenses/by/2.1/jp/deed.en">CC BY 2.1 jp</a></li><li><a href="https://www.city.niigata.lg.jp/shisei/seisaku/it/open-data/opendata-gazou/od-fukei/od-yuuhi/od-yuuhi004.html">夕日に染まる山の下海浜公園</a> ／ 新潟市（政策企画部広報課） ／ <a href="https://creativecommons.org/licenses/by/2.1/jp/">CC BY 2.1 JP</a></li></ul><p>駅弁3点と酒器の画像には、料理の特徴を表現した生成イメージを使用しています。</p></div></details></div></footer>
 <dialog id="guide-dialog" aria-label="案内の詳細"><button id="close-modal" aria-label="閉じる"><i data-icon="close"></i></button><div id="modal-content"></div></dialog>
